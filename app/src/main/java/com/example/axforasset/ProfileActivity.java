@@ -33,12 +33,6 @@ public class ProfileActivity extends AppCompatActivity {
         rlMenu = findViewById(R.id.rlMenu);
         backBtn = findViewById(R.id.backBtn);
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getOnBackPressedDispatcher();
-            }
-        });
     }
 
     @Override
