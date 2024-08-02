@@ -1,7 +1,10 @@
 package com.example.axforasset;
 
+import androidx.activity.OnBackPressedDispatcher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -10,16 +13,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
 public class ProfileActivity extends AppCompatActivity {
 
     Toolbar toolbar;
+    TextView tvGreetings;
     Button backBtn;
     Button hamburgetBtn;
-    RelativeLayout rlMenu;
     Menu home;
 
     @Override
@@ -30,8 +35,20 @@ public class ProfileActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        rlMenu = findViewById(R.id.rlMenu);
+        tvGreetings = findViewById(R.id.tvGreetings);
+
+        Intent i = getIntent();
+        String username = i.getStringExtra("username");
+        tvGreetings.setText("Hi, " + username + "!");
+
         backBtn = findViewById(R.id.backBtn);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
@@ -54,8 +71,8 @@ public class ProfileActivity extends AppCompatActivity {
                 return true;
 
             case R.id.logout:
-                Toast.makeText(this, "Log out Clicked", Toast.LENGTH_SHORT).show();
-                return true;
+                Intent i = new Intent(ProfileActivity.this, LoginActivity.class);
+                startActivity(i);
 
             default:
                 return super.onOptionsItemSelected(item);

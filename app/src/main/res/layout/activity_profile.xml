@@ -44,82 +44,6 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <RelativeLayout
-            android:id="@+id/rlMenu"
-            android:layout_width="110dp"
-            android:layout_height="130dp"
-            android:layout_below="@+id/rlHeader"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/menu"
-            android:visibility="invisible">
-
-                <ImageView
-                    android:id="@+id/ivHomeMenu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/home" />
-
-                <TextView
-                    android:id="@+id/tvHomeMenu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/ivHomeMenu"
-                    android:fontFamily="@font/poppins"
-                    android:text="Home"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="18dp"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-                <ImageView
-                    android:id="@+id/ivItemsMenu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_below="@+id/ivHomeMenu"
-                    android:src="@drawable/items" />
-
-                <TextView
-                    android:id="@+id/tvItemsMenu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/ivHomeMenu"
-                    android:fontFamily="@font/poppins"
-                    android:text="Items"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginLeft="18dp"
-                    android:textColor="@color/black"
-                    android:layout_below="@+id/tvHomeMenu"
-                    android:textSize="12sp" />
-
-                <ImageView
-                    android:id="@+id/ivLogoutMenu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_below="@+id/tvItemsMenu"
-                    android:src="@drawable/logout" />
-
-                <TextView
-                    android:id="@+id/tvLogoutMenu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/ivHomeMenu"
-                    android:fontFamily="@font/poppins"
-                    android:text="Log out"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginLeft="18dp"
-                    android:textColor="@color/black"
-                    android:layout_below="@+id/tvItemsMenu"
-                    android:textSize="12sp" />
-
-        </RelativeLayout>
-
         <TextView
             android:id="@+id/tvGreetings"
             android:layout_width="match_parent"
@@ -152,7 +76,6 @@
                     android:scaleType="centerCrop"
                     />
         </androidx.cardview.widget.CardView>
-
 
         <TextView
             android:id="@+id/tvEmail"
@@ -258,7 +181,7 @@
             android:layout_below="@+id/tvPhoneNumber"
             android:inputType="text"/>
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/loginBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
