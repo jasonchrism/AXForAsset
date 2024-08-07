@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                     tvPasswordError.setVisibility(View.VISIBLE);
                     tvPasswordError.setText("Password must be at least 8 characters");
                 } else {
-                    Intent i = new Intent(LoginActivity.this, ProfileActivity.class);
+                    Intent i = new Intent(LoginActivity.this, HomeActivity.class);
                     i.putExtra("username", etUsername.getText().toString());
                     startActivity(i);
                 }

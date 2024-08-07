@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            android:maxWidth="180dp"
+            android:maxHeight="60dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo_hitam" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="12dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvGreeting1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome, Username"
+        android:layout_below="@id/rlHeader"
+        android:textSize="24sp"
+        android:layout_marginStart="24dp"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:id="@+id/tvGreeting2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elevate your game!"
+        android:layout_below="@id/tvGreeting1"
+        android:textSize="24sp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/black"
+        />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerCarousel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvGreeting2"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+
+        />
+
+
+</RelativeLayout>

@@ -27,6 +27,8 @@ public class ProfileActivity extends AppCompatActivity {
     Button hamburgetBtn;
     Menu home;
 
+    String username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +40,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvGreetings = findViewById(R.id.tvGreetings);
 
         Intent i = getIntent();
-        String username = i.getStringExtra("username");
+        username = i.getStringExtra("username");
         tvGreetings.setText("Hi, " + username + "!");
 
         backBtn = findViewById(R.id.backBtn);
@@ -63,8 +65,10 @@ public class ProfileActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.home:
-                Toast.makeText(this, "Home Clicked", Toast.LENGTH_SHORT).show();
-                return true;
+                Intent iHome = new Intent(ProfileActivity.this, HomeActivity.class);
+                iHome.putExtra("username", username);
+                startActivity(iHome);
+                break;
 
             case R.id.items:
                 Toast.makeText(this, "Items Clicked", Toast.LENGTH_SHORT).show();
@@ -73,9 +77,11 @@ public class ProfileActivity extends AppCompatActivity {
             case R.id.logout:
                 Intent i = new Intent(ProfileActivity.this, LoginActivity.class);
                 startActivity(i);
+                break;
 
             default:
                 return super.onOptionsItemSelected(item);
         }
+        return false;
     }
 }
