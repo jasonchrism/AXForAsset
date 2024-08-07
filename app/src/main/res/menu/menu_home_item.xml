@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/hamburgerBtn"
+        app:showAsAction="always"
+        android:title="Home"
+        android:icon="@drawable/hamburger_button">
+        <menu>
+
+            <item
+                android:id="@+id/items"
+                android:title="Items"
+                app:showAsAction="never"
+                android:icon="@drawable/items" />
+
+            <item
+                android:id="@+id/profile"
+                android:title="Profile"
+                app:showAsAction="never"
+                android:icon="@drawable/icon_user" />
+
+            <item
+                android:id="@+id/logout"
+                android:title="Log out"
+                app:showAsAction="never"
+                android:icon="@drawable/logout" />
+        </menu>
+    </item>
+</menu>
