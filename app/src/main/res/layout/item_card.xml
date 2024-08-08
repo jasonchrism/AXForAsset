@@ -41,7 +41,8 @@
         android:text="Kunai sakti mata tajam biru pencabut nyawa"
         android:textSize="14sp"
         android:layout_marginBottom="2dp"
-        android:textColor="#797979"/>
+        android:textColor="#797979"
+        android:fontFamily="@font/poppins"/>
 
     <!-- Price TextView -->
 
@@ -57,14 +58,15 @@
         android:text="$100"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_semibold"/>
 
     <Button
         android:id="@+id/item_detail_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minWidth="80dp"
-        android:minHeight="25dp"
+        android:minHeight="18dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:background="@drawable/button_background"
@@ -72,6 +74,7 @@
         android:textColor="@android:color/white"
         android:textAllCaps="false"
         android:gravity="center"
-        android:textSize="12sp"/>
+        android:textSize="12sp"
+        android:fontFamily="@font/poppins_semibold"/>
 
 </RelativeLayout>
