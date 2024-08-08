@@ -3,16 +3,25 @@ package com.example.axforasset;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +34,9 @@ public class HomeActivity extends AppCompatActivity {
 
     private ViewPager2 viewPager2;
     private Handler sliderHandler = new Handler();
+    private RecyclerView recyclerView;
+    private ItemAdapter itemAdapter;
+    private List<Item> itemList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +67,60 @@ public class HomeActivity extends AppCompatActivity {
                 sliderHandler.postDelayed(sliderRunnable, 3000);
             }
         });
+
+        TextView tvViewMore = findViewById(R.id.text_view_more);
+        tvViewMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent iItems = new Intent(HomeActivity.this, ProfileActivity.class);
+                startActivity(iItems);
+            }
+        });
+
+        // card item
+        recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        itemList = new ArrayList<>();
+        itemList.add(new Item(R.drawable.kunai, "Kunai Honai", "Kunai sakti mata tajam biru pencabut nyawa", 100));
+        itemList.add(new Item(R.drawable.top_gun, "Top Gun Asia", "Mau aku tembak ga", 90.44));
+        itemList.add(new Item(R.drawable.spartan, "Chevrolet Impala", "3D aset mobil terbaik di dunia mantap", 55.67));
+        itemList.add(new Item(R.drawable.half_demon, "Chrager Faster", "Mobil hitam jetblack siap tempur nih ngab", 75.88));
+        // Add more items as needed
+
+        itemAdapter = new ItemAdapter(this, itemList);
+        recyclerView.setAdapter(itemAdapter);
+
+        // tab
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        ViewPager2 viewPager = findViewById(R.id.view_pager);
+
+        ViewPagerHomeAdapter adapter = new ViewPagerHomeAdapter(this);
+        viewPager.setAdapter(adapter);
+
+        Typeface typeface = ResourcesCompat.getFont(this, R.font.poppins_semibold);
+
+        for (int j = 0; j < tabLayout.getTabCount(); j++) {
+            TabLayout.Tab tab = tabLayout.getTabAt(j);
+            if (tab != null) {
+                // Get the TextView of the tab and set the custom font
+                TextView tabTextView = (TextView) ((LinearLayout) tabLayout.getChildAt(0)).getChildAt(j).findViewById(android.R.id.text1);
+                if (tabTextView != null) {
+                    tabTextView.setTypeface(typeface);
+                }
+            }
+        }
+
+        new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
+            switch (position) {
+                case 0:
+                    tab.setText("Terms");
+                    break;
+                case 1:
+                    tab.setText("Conditions");
+                    break;
+            }
+        }).attach();
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
