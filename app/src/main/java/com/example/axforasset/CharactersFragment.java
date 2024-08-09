@@ -38,10 +38,10 @@ public class CharactersFragment extends Fragment {
 
     private List<Item> getItems() {
         List<Item> items = new ArrayList<>();
-        items.add(new Item("Dragon Slayer","$85.75", "Penunggang naga dari anime Demon Slayer", R.drawable.dragon_slayer));
-        items.add(new Item("Elite Archer","$57.55", "Mau aku tembak panah seng? Pemanah keren",R.drawable.elite_archer));
-        items.add(new Item("Spartan Hotplite","$35.77", "Samurai penebas pedang yang siap menyelamatkan", R.drawable.spartan));
-        items.add(new Item("The Warrior","$50.47", "Malaikat dari Surga yang siap menyucikan Anda!", R.drawable.the_warrior));
+        items.add(new Item("Dragon Slayer","$85.75", "Battle-ready hero with a legacy of slaying dragons", R.drawable.dragon_slayer));
+        items.add(new Item("Elite Archer","$57.55", "Precision and skill meet in this marter archer",R.drawable.elite_archer));
+        items.add(new Item("Spartan Hotplite","$35.77", "Ancient warrior with unmatched bravery", R.drawable.spartan));
+        items.add(new Item("The Warrior","$50.47", "A fearless combatant ready for any challenge", R.drawable.the_warrior));;
         return items;
     }
 }

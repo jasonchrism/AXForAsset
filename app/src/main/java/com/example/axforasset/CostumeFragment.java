@@ -38,10 +38,10 @@ public class CostumeFragment extends Fragment {
 
     private List<Item> getItems() {
         List<Item> items = new ArrayList<>();
-        items.add(new Item("Classic Dress","90.75", "Mini dress tuan putri kerajaan", R.drawable.classic_dress));
-        items.add(new Item("Leather Jacket","$85.67", "Jaket kulit sapi yang hangat",R.drawable.leather_jacket));
-        items.add(new Item("Harley Quinn","$59.67", "Oneset Harley Quinn pacar Joker", R.drawable.harley_queen));
-        items.add(new Item("Safety Vest","$78.67", "Vest yang siap melindungi kalian", R.drawable.safety_vest));
+        items.add(new Item("Classic Dress","$90.75", "Timeless elegance wrapped in a single outfit", R.drawable.classic_dress));
+        items.add(new Item("Leather Jacket","$85.67", "Rugged style for the fearless",R.drawable.leather_jacket));
+        items.add(new Item("Harley Quinn","$59.67", "Embrace the madness with this iconic look", R.drawable.harley_queen));
+        items.add(new Item("Safety Vest","$78.67", "Stay protected while looking sharp", R.drawable.safety_vest));
         return items;
     }
 }

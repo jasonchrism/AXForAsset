@@ -38,10 +38,10 @@ public class WeaponsFragment extends Fragment {
 
     private List<Item> getItems() {
         List<Item> items = new ArrayList<>();
-        items.add(new Item("Moonlight Sword","$15.27", "Pedang yang seperti cahaya bulan", R.drawable.moonlight_sowrd));
-        items.add(new Item("Top Guns AsiaAfrica","$27.95", "Mau aku tembak ga seng? Tembakan paling keren",R.drawable.top_guns_asiaafrica));
-        items.add(new Item("Ghost Guns","$45.86", "Siap menembak dengan banyak peluru", R.drawable.ghost));
-        items.add(new Item("Shadow Piercer","$59.75", "Siap melakukan headshot kepada musuh", R.drawable.shadow_piercer));
+        items.add(new Item("Moonlight Sword","$15.27", "A blade forget from the light of the moon", R.drawable.moonlight_sowrd));
+        items.add(new Item("Top Guns AsiaAfrica","$27.95", "Elite firepower from two continents",R.drawable.top_guns_asiaafrica));
+        items.add(new Item("Ghost Guns","$45.86", "Weapons that strike without a trace", R.drawable.ghost));
+        items.add(new Item("Shadow Piercer","$59.75", "Stealthy and lethal, the ultimate assassin's tool", R.drawable.shadow_piercer));
         return items;
     }
 }

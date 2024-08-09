@@ -141,8 +141,9 @@ public class HomeActivity extends AppCompatActivity {
         switch (item.getItemId()) {
 
             case R.id.items:
-                Toast.makeText(this, "Items Clicked", Toast.LENGTH_SHORT).show();
-                return true;
+                Intent iItems = new Intent(HomeActivity.this, ItemsActivity.class);
+                startActivity(iItems);
+                break;
 
             case R.id.profile:
                 Intent iProfile = new Intent(HomeActivity.this, ProfileActivity.class);
@@ -151,8 +152,8 @@ public class HomeActivity extends AppCompatActivity {
                 break;
 
             case R.id.logout:
-                Intent i = new Intent(HomeActivity.this, LoginActivity.class);
-                startActivity(i);
+                Intent iLogout = new Intent(HomeActivity.this, LoginActivity.class);
+                startActivity(iLogout);
                 break;
 
             default:
