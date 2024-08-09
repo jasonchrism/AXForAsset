@@ -82,13 +82,13 @@ public class HomeActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         itemList = new ArrayList<>();
-        itemList.add(new Item(R.drawable.kunai, "Kunai Honai", "Kunai sakti mata tajam biru pencabut nyawa", 100));
-        itemList.add(new Item(R.drawable.top_gun, "Top Gun Asia", "Mau aku tembak ga", 90.44));
-        itemList.add(new Item(R.drawable.spartan, "Chevrolet Impala", "3D aset mobil terbaik di dunia mantap", 55.67));
-        itemList.add(new Item(R.drawable.half_demon, "Chrager Faster", "Mobil hitam jetblack siap tempur nih ngab", 75.88));
+//        itemList.add(new Item(R.drawable.kunai, "Kunai Honai", "Kunai sakti mata tajam biru pencabut nyawa", 100));
+//        itemList.add(new Item(R.drawable.top_gun, "Top Gun Asia", "Mau aku tembak ga", 90.44));
+//        itemList.add(new Item(R.drawable.spartan, "Chevrolet Impala", "3D aset mobil terbaik di dunia mantap", 55.67));
+//        itemList.add(new Item(R.drawable.half_demon, "Chrager Faster", "Mobil hitam jetblack siap tempur nih ngab", 75.88));
         // Add more items as needed
 
-        itemAdapter = new ItemAdapter(this, itemList);
+//        itemAdapter = new ItemAdapter(this, itemList);
         recyclerView.setAdapter(itemAdapter);
 
         // tab
