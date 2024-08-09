@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
             public void run() {
 
-                Intent intent = new Intent(MainActivity.this, ItemsActivity.class);
+                Intent intent = new Intent(MainActivity.this, PageDetail.class);
 
 //                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
 //                 Intent intent = new Intent(MainActivity.this, PageDetail.class);
