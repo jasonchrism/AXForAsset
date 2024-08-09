@@ -2,16 +2,20 @@ package com.example.axforasset;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +27,7 @@ import android.widget.Toolbar;
 import com.example.axforasset.Item;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,6 +79,31 @@ public class ItemsActivity extends AppCompatActivity {
         tabLayoutCategories.setupWithViewPager(viewPagerCategories);
 
         tabLayoutCategories.setTabMode(TabLayout.MODE_SCROLLABLE);
+
+        tabLayoutCategories.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                Typeface typeface = ResourcesCompat.getFont(ItemsActivity.this, R.font.poppins_semibold);
+
+                // Iterate through each tab and apply the font
+                for (int i = 0; i < tabLayoutCategories.getTabCount(); i++) {
+                    TabLayout.Tab tab = tabLayoutCategories.getTabAt(i);
+                    if (tab != null && tab.getCustomView() == null) {
+                        LinearLayout tabView = (LinearLayout) ((ViewGroup) tabLayoutCategories.getChildAt(0)).getChildAt(i);
+                        TextView tabTextView = (TextView) tabView.getChildAt(1); // Find TextView by index
+
+                        if (tabTextView != null) {
+                            tabTextView.setTypeface(typeface);
+                            tabTextView.setAllCaps(false);
+                            tabTextView.setGravity(Gravity.CENTER_VERTICAL); // Center text vertically
+                        }
+                    }
+                }
+
+                // Remove the listener to avoid triggering it multiple times
+                tabLayoutCategories.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+            }
+        });
 
         recyclerViewItems = findViewById(R.id.recyclerViewItems);
         recyclerViewItems.setLayoutManager(new LinearLayoutManager(this));

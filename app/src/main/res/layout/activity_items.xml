@@ -48,7 +48,8 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rlHeader">
+        android:layout_below="@id/rlHeader"
+        android:paddingHorizontal="24dp">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -78,7 +79,8 @@
         android:id="@+id/viewPagerCategories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/searchFrame">
+        android:layout_below="@id/searchFrame"
+        android:layout_marginStart="20dp">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayoutCategories"
@@ -93,7 +95,8 @@
             app:tabTextColor="@color/black"
             app:tabSelectedTextColor="@color/purple_500"
             app:tabIndicatorColor="@color/transparent"
-            app:tabRippleColor="@color/transparent"/>
+            app:tabRippleColor="@color/transparent"
+            />
     </androidx.viewpager.widget.ViewPager>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -101,7 +104,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/viewPagerCategories"
-        android:padding="16dp"
-        android:clipToPadding="false" />
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        />
 
 </RelativeLayout>
