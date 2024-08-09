@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingVertical="10dp"
+    android:paddingHorizontal="10dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <TextView
+            android:id="@+id/text_conditions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="These terms govern your use of our mobile application for purchasing 3D game assets. By downloading the app, you agree to these terms. We may update them, so please check back periodically. The app allows you to browse, purchase, and download high-quality 3D assets for your game development projects. We grant you a non-exclusive license to use these assets according to the specified terms of use outlined for each asset. You may not redistribute or resell the assets without our express permission. We collect certain user data to facilitate transactions and improve your experience. Please refer to our Privacy Policy for details. We are not liable for any damages arising from your use of the app or the 3D assets."
+            android:textSize="16sp"
+            android:justificationMode="inter_word"/>
+
+    </ScrollView>
+
+</LinearLayout>
