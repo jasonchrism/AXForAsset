@@ -1,6 +1,26 @@
 package com.example.axforasset;
 
 public class Item {
+
+    private String name;
+    private String price;
+    private String description;
+    private int imageResourceId;
+
+    public Item(String name, String price, String description, int imageResourceId) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.imageResourceId = imageResourceId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPrice() {
+        return price;
+
     private int imageResource;
     private String title;
     private String description;
@@ -27,11 +47,16 @@ public class Item {
 
     public void setTitle(String title) {
         this.title = title;
+
     }
 
     public String getDescription() {
         return description;
     }
+
+
+    public int getImageResourceId() {
+        return imageResourceId;
 
     public void setDescription(String description) {
         this.description = description;
@@ -43,5 +68,6 @@ public class Item {
 
     public void setPrice(int price) {
         this.price = price;
+
     }
 }
