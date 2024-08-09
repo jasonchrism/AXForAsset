@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -23,6 +24,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     TextView tvGreetings;
+    EditText etEmail;
     Button backBtn;
     Button hamburgetBtn;
     RelativeLayout rlMenu;
@@ -40,9 +42,12 @@ public class ProfileActivity extends AppCompatActivity {
 
         tvGreetings = findViewById(R.id.tvGreetings);
 
+        etEmail = findViewById(R.id.etEmail);
+
         Intent i = getIntent();
         username = i.getStringExtra("username");
         tvGreetings.setText("Hi, " + username + "!");
+        etEmail.setText(username + "@gmail.com");
 
         backBtn = findViewById(R.id.backBtn);
 
