@@ -86,8 +86,8 @@ public class HomeActivity extends AppCompatActivity {
         itemList = new ArrayList<>();
         itemList.add(new Item("Kunai Honai", "$100", "Kunai sakti mata tajam biru pencabut nyawa", R.drawable.kunai));
         itemList.add(new Item("Top Gun Asia", "$90.44", "Mau aku tembak ga", R.drawable.top_gun));
-        itemList.add(new Item("Chevrolet Impala", "$55.67", "3D aset mobil terbaik di dunia mantap", R.drawable.chevrolet_impala));
-        itemList.add(new Item( "Chrager Faster", "$75.88","Mobil hitam jetblack siap tempur nih ngab", R.drawable.dodge_charger));
+        itemList.add(new Item("Chevrolet Impala", "$55.67", "The smooth, classic drive for any journey", R.drawable.chevrolet_impala));
+        itemList.add(new Item( "Chrager Faster", "$75.88","Speed and power for the ultimate race", R.drawable.chrager_faster));
         // Add more items as needed
 
         itemAdapter = new ItemAdapter(itemList, this);
