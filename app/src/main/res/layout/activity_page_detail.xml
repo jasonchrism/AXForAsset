@@ -57,11 +57,11 @@
         android:layout_marginHorizontal="24dp"
         android:scaleType="centerCrop"
         android:src="@drawable/kunai"
-        android:background="@drawable/edit_text_border"
+        android:background="@drawable/image_detail_rounded"
+        android:clipToOutline="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rlHeader"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/rlHeader" />
 
     <!-- Product Name -->
     <TextView
