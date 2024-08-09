@@ -38,10 +38,10 @@ public class VehiclesFragment extends Fragment {
 
     private List<Item> getItems() {
         List<Item> items = new ArrayList<>();
-        items.add(new Item("Pugeot 205","$105.79", "Kunai sakti mata tajam biru pencabut nyawa", R.drawable.pugeot_205));
-        items.add(new Item("Dodge Charger","$97.59", "Mau aku tembak ga seng? Tembakan paling keren",R.drawable.dodge_charger));
-        items.add(new Item("Chevrolet Impala","$15.78", "3D aset mobil terbaik di dunia mantap", R.drawable.chevrolet_impala));
-        items.add(new Item("Charger Faster","$10.67", "Mobil hitam jetblack siap tempur nih ngab", R.drawable.chrager_faster));
+        items.add(new Item("Pugeot 205","$105.79", "Compact yet powerful, a classic in the streets", R.drawable.pugeot_205));
+        items.add(new Item("Dodge Charger","$97.59", "Muscle and style combine in this iconic ride",R.drawable.dodge_charger));
+        items.add(new Item("Chevrolet Impala","$15.78", "The smooth, classic drive for any journey", R.drawable.chevrolet_impala));
+        items.add(new Item("Charger Faster","$10.67", "Speed and power for the ultimate race", R.drawable.chrager_faster));
         return items;
     }
 }

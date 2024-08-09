@@ -72,12 +72,13 @@ public class ProfileActivity extends AppCompatActivity {
                 break;
 
             case R.id.items:
-                Toast.makeText(this, "Items Clicked", Toast.LENGTH_SHORT).show();
-                return true;
+                Intent iItems = new Intent(ProfileActivity.this, ItemsActivity.class);
+                startActivity(iItems);
+                break;
 
             case R.id.logout:
-                Intent i = new Intent(ProfileActivity.this, LoginActivity.class);
-                startActivity(i);
+                Intent iLogout = new Intent(ProfileActivity.this, LoginActivity.class);
+                startActivity(iLogout);
                 break;
 
             default:

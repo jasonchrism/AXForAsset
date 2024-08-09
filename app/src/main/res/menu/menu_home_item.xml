@@ -18,7 +18,7 @@
                 android:id="@+id/profile"
                 android:title="Profile"
                 app:showAsAction="never"
-                android:icon="@drawable/icon_user" />
+                android:icon="@drawable/person" />
 
             <item
                 android:id="@+id/logout"

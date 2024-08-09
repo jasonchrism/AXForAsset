@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -14,6 +15,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.inputmethod.EditorInfo;
@@ -58,6 +60,12 @@ public class ItemsActivity extends AppCompatActivity {
 
 //        rlMenu = findViewById(R.id.rlMenu);
         backBtn = findViewById(R.id.backBtn);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         searchView = findViewById(R.id.searchView);
         searchView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -122,20 +130,24 @@ public class ItemsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.home:
-                Toast.makeText(this, "Home Clicked", Toast.LENGTH_SHORT).show();
-                return true;
+                Intent iHome = new Intent(ItemsActivity.this, HomeActivity.class);
+                startActivity(iHome);
+                break;
 
             case R.id.profile:
-                Toast.makeText(this, "Profile Clicked", Toast.LENGTH_SHORT).show();
-                return true;
+                Intent iProfile = new Intent(ItemsActivity.this, ProfileActivity.class);
+                startActivity(iProfile);
+                break;
 
             case R.id.logout:
-                Toast.makeText(this, "Log out Clicked", Toast.LENGTH_SHORT).show();
-                return true;
+                Intent iLogout = new Intent(ItemsActivity.this, LoginActivity.class);
+                startActivity(iLogout);
+                break;
 
             default:
                 return super.onOptionsItemSelected(item);
         }
+        return false;
     }
 
     private void GoToSearchView(){

@@ -1,14 +1,17 @@
 package com.example.axforasset;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -52,6 +55,15 @@ public class PageDetail extends AppCompatActivity {
 
         // Inisialisasi EditText
         EditText editTextName = findViewById(R.id.emailInput);
+
+        Button backBtn;
+        backBtn = findViewById(R.id.backBtn);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         // Set OnItemSelectedListener untuk Spinner (opsional)
         paymentMethodSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -103,4 +115,29 @@ public class PageDetail extends AppCompatActivity {
         inflater.inflate(R.menu.menu_item2, menu);
         return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                Intent iHome = new Intent(PageDetail.this, HomeActivity.class);
+                startActivity(iHome);
+                break;
+
+            case R.id.profile:
+                Intent iProfile = new Intent(PageDetail.this, ProfileActivity.class);
+                startActivity(iProfile);
+                break;
+
+            case R.id.logout:
+                Intent iLogout = new Intent(PageDetail.this, LoginActivity.class);
+                startActivity(iLogout);
+                break;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return false;
+    }
+
 }

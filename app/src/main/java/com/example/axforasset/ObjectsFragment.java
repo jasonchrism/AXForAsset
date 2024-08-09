@@ -38,10 +38,10 @@ public class ObjectsFragment extends Fragment {
 
     private List<Item> getItems() {
         List<Item> items = new ArrayList<>();
-        items.add(new Item("Fantasy Terrain","$45.75", "Pilihan tanah yang beraneka ragam", R.drawable.fantasy_terrain));
-        items.add(new Item("Shatter Stone","$58.86", "Pilihan batu mineral poseidon",R.drawable.shatter_stone));
-        items.add(new Item("Science Hospital","$49.78", "Ruangan-ruangan yang ada di Rumah Sakit", R.drawable.scifi_hospital));
-        items.add(new Item("Vegetation 2","$60.67", "Kumpulan tanaman dan tumbuhan hijau", R.drawable.vegetation2));
+        items.add(new Item("Fantasy Terrain","$45.75", "A mystical landscape for epic adventures", R.drawable.fantasy_terrain));
+        items.add(new Item("Shatter Stone","$58.86", "A powerful artifact that can break anything",R.drawable.shatter_stone));
+        items.add(new Item("Science Hospital","$49.78", "Cutting-edge medical facility for the future", R.drawable.scifi_hospital));
+        items.add(new Item("Vegetation 2","$60.67", "Lush greenery to bring life to any environment", R.drawable.vegetation2));
         return items;
     }
 }
