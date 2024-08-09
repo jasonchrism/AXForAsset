@@ -1,6 +1,7 @@
 package com.example.axforasset;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +47,12 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
             holder.detailButton.setOnClickListener(v -> {
                 // Handle detail button click
-
+                Intent iDetail = new Intent(v.getContext(), PageDetail.class);
+                iDetail.putExtra("item_name", item.getName());
+                iDetail.putExtra("item_price", item.getPrice());
+                iDetail.putExtra("item_desc", item.getDescription());
+                iDetail.putExtra("item_image", item.getImageResourceId());
+                v.getContext().startActivity(iDetail);
             });
 
         }
