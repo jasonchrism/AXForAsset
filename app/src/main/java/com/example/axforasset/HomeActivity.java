@@ -12,10 +12,12 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -72,7 +74,7 @@ public class HomeActivity extends AppCompatActivity {
         tvViewMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent iItems = new Intent(HomeActivity.this, ProfileActivity.class);
+                Intent iItems = new Intent(HomeActivity.this, ItemsActivity.class);
                 startActivity(iItems);
             }
         });
@@ -82,13 +84,13 @@ public class HomeActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         itemList = new ArrayList<>();
-//        itemList.add(new Item(R.drawable.kunai, "Kunai Honai", "Kunai sakti mata tajam biru pencabut nyawa", 100));
-//        itemList.add(new Item(R.drawable.top_gun, "Top Gun Asia", "Mau aku tembak ga", 90.44));
-//        itemList.add(new Item(R.drawable.spartan, "Chevrolet Impala", "3D aset mobil terbaik di dunia mantap", 55.67));
-//        itemList.add(new Item(R.drawable.half_demon, "Chrager Faster", "Mobil hitam jetblack siap tempur nih ngab", 75.88));
+        itemList.add(new Item("Kunai Honai", "$100", "Kunai sakti mata tajam biru pencabut nyawa", R.drawable.kunai));
+        itemList.add(new Item("Top Gun Asia", "$90.44", "Mau aku tembak ga", R.drawable.top_gun));
+        itemList.add(new Item("Chevrolet Impala", "$55.67", "3D aset mobil terbaik di dunia mantap", R.drawable.spartan));
+        itemList.add(new Item( "Chrager Faster", "$75.88","Mobil hitam jetblack siap tempur nih ngab", R.drawable.half_demon));
         // Add more items as needed
 
-//        itemAdapter = new ItemAdapter(this, itemList);
+        itemAdapter = new ItemAdapter(itemList, this);
         recyclerView.setAdapter(itemAdapter);
 
         // tab
@@ -98,18 +100,7 @@ public class HomeActivity extends AppCompatActivity {
         ViewPagerHomeAdapter adapter = new ViewPagerHomeAdapter(this);
         viewPager.setAdapter(adapter);
 
-        Typeface typeface = ResourcesCompat.getFont(this, R.font.poppins_semibold);
-
-        for (int j = 0; j < tabLayout.getTabCount(); j++) {
-            TabLayout.Tab tab = tabLayout.getTabAt(j);
-            if (tab != null) {
-                // Get the TextView of the tab and set the custom font
-                TextView tabTextView = (TextView) ((LinearLayout) tabLayout.getChildAt(0)).getChildAt(j).findViewById(android.R.id.text1);
-                if (tabTextView != null) {
-                    tabTextView.setTypeface(typeface);
-                }
-            }
-        }
+//        Typeface typeface = ResourcesCompat.getFont(this, R.font.poppins_semibold);
 
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
             switch (position) {
@@ -121,6 +112,25 @@ public class HomeActivity extends AppCompatActivity {
                     break;
             }
         }).attach();
+
+        tabLayout.getViewTreeObserver().addOnGlobalLayoutListener(() -> {
+            Typeface typeface = ResourcesCompat.getFont(this, R.font.poppins_semibold);
+
+            for (int j = 0; j < tabLayout.getTabCount(); j++) {
+                TabLayout.Tab tab = tabLayout.getTabAt(j);
+                if (tab != null) {
+                    LinearLayout tabView = (LinearLayout) ((ViewGroup) tabLayout.getChildAt(0)).getChildAt(j);
+                    TextView tabTextView = (TextView) tabView.getChildAt(1); // Find TextView by index
+
+                    if (tabTextView != null) {
+                        tabTextView.setTypeface(typeface);
+                        tabTextView.setLetterSpacing(0);
+                        tabTextView.setAllCaps(false);
+                    }
+                }
+            }
+        });
+
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
