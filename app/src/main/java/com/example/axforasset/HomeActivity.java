@@ -86,8 +86,8 @@ public class HomeActivity extends AppCompatActivity {
         itemList = new ArrayList<>();
         itemList.add(new Item("Kunai Honai", "$100", "Kunai sakti mata tajam biru pencabut nyawa", R.drawable.kunai));
         itemList.add(new Item("Top Gun Asia", "$90.44", "Mau aku tembak ga", R.drawable.top_gun));
-        itemList.add(new Item("Chevrolet Impala", "$55.67", "3D aset mobil terbaik di dunia mantap", R.drawable.spartan));
-        itemList.add(new Item( "Chrager Faster", "$75.88","Mobil hitam jetblack siap tempur nih ngab", R.drawable.half_demon));
+        itemList.add(new Item("Chevrolet Impala", "$55.67", "3D aset mobil terbaik di dunia mantap", R.drawable.chevrolet_impala));
+        itemList.add(new Item( "Chrager Faster", "$75.88","Mobil hitam jetblack siap tempur nih ngab", R.drawable.dodge_charger));
         // Add more items as needed
 
         itemAdapter = new ItemAdapter(itemList, this);
@@ -100,7 +100,6 @@ public class HomeActivity extends AppCompatActivity {
         ViewPagerHomeAdapter adapter = new ViewPagerHomeAdapter(this);
         viewPager.setAdapter(adapter);
 
-//        Typeface typeface = ResourcesCompat.getFont(this, R.font.poppins_semibold);
 
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
             switch (position) {

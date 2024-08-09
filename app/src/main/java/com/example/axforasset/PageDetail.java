@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,7 +13,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class PageDetail extends AppCompatActivity {
 
@@ -23,6 +26,25 @@ public class PageDetail extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        // set the value
+        Intent iDetail = getIntent();
+        String name = iDetail.getStringExtra("item_name");
+        String price = iDetail.getStringExtra("item_price");
+        int itemImageResourceId = iDetail.getIntExtra("item_image", -1);
+        String desc = iDetail.getStringExtra("item_desc");
+        TextView itemName = findViewById(R.id.productName);
+        TextView itemPrice = findViewById(R.id.productPrice);
+        TextView itemDesc = findViewById(R.id.productDescription);
+        ImageView imageView = findViewById(R.id.productImage);
+        itemName.setText(name);
+        itemPrice.setText(price);
+        itemDesc.setText(desc);
+
+        if(itemImageResourceId != -1) {
+            imageView.setImageResource(itemImageResourceId);
+        }
+
 
         // Inisialisasi Spinner dan Button
         Spinner paymentMethodSpinner = findViewById(R.id.paymentMethodSpinner);
