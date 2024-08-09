@@ -25,6 +25,7 @@ public class ProfileActivity extends AppCompatActivity {
     TextView tvGreetings;
     Button backBtn;
     Button hamburgetBtn;
+    RelativeLayout rlMenu;
     Menu home;
 
     @Override
