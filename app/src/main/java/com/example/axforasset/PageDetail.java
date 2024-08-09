@@ -6,6 +6,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -18,6 +20,9 @@ public class PageDetail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_detail);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         // Inisialisasi Spinner dan Button
         Spinner paymentMethodSpinner = findViewById(R.id.paymentMethodSpinner);
@@ -50,7 +55,10 @@ public class PageDetail extends AppCompatActivity {
                 if (name.isEmpty()) {
                     builder.setTitle("Submission Failed");
                     builder.setMessage("Please fill in your email address");
-                }else{
+                } else if (paymentMethodSpinner.getSelectedItem().toString().equals("Choose Payment")) {
+                    builder.setTitle("Submission Failed");
+                    builder.setMessage("Please choose your payment method");
+                } else {
                     builder.setTitle("Submission Success");
                     builder.setMessage("A confirmation email has been sent to your provided email address. Please check your inbox");
                 }
@@ -65,5 +73,12 @@ public class PageDetail extends AppCompatActivity {
                 dialog.show();
             }
         });
+}
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_item2, menu);
+        return true;
     }
 }
