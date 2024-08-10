@@ -143,6 +143,7 @@ public class HomeActivity extends AppCompatActivity {
 
             case R.id.items:
                 Intent iItems = new Intent(HomeActivity.this, ItemsActivity.class);
+                iItems.putExtra("username", username);
                 startActivity(iItems);
                 break;
 

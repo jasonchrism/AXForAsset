@@ -49,11 +49,14 @@ public class ItemsActivity extends AppCompatActivity {
 
     RecyclerView recyclerViewItems;
     ItemAdapter itemAdapter;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_items);
+        Intent i = getIntent();
+        username = i.getStringExtra("username");
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -131,11 +134,13 @@ public class ItemsActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.home:
                 Intent iHome = new Intent(ItemsActivity.this, HomeActivity.class);
+                iHome.putExtra("username", username);
                 startActivity(iHome);
                 break;
 
             case R.id.profile:
                 Intent iProfile = new Intent(ItemsActivity.this, ProfileActivity.class);
+                iProfile.putExtra("username", username);
                 startActivity(iProfile);
                 break;
 
