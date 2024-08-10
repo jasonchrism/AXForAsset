@@ -78,6 +78,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             case R.id.items:
                 Intent iItems = new Intent(ProfileActivity.this, ItemsActivity.class);
+                iItems.putExtra("username", username);
                 startActivity(iItems);
                 break;
 
