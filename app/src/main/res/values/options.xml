@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="payment_methods">
-        <item>Choose Payment</item>
-        <item>MasterCard</item>
+        <item>Payment Method</item>
         <item>Visa</item>
-        <item>PayPal</item>
+        <item>Master Card</item>
+        <item>Credit Card</item>
     </string-array>
 </resources>

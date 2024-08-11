@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,16 +10,14 @@
     <!-- Header Layout -->
     <RelativeLayout
         android:id="@+id/rlHeader"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
 
         <Button
             android:id="@+id/backBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:background="@android:color/transparent"
@@ -36,38 +34,35 @@
             android:fontFamily="@font/poppins_semibold" />
     </RelativeLayout>
 
+    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        app:titleTextColor="@color/transparent"
-        android:background="@color/transparent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="12dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="12dp" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <!-- Image of the Product -->
     <ImageView
         android:id="@+id/productImage"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_below="@id/toolbar"
         android:layout_marginHorizontal="24dp"
         android:scaleType="centerCrop"
         android:src="@drawable/kunai"
         android:background="@drawable/image_detail_rounded"
-        android:clipToOutline="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rlHeader" />
+        android:clipToOutline="true" />
 
     <!-- Product Name -->
     <TextView
         android:id="@+id/productName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/productImage"
         android:text="Kunai Honai"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -75,8 +70,6 @@
         android:layout_marginTop="24dp"
         android:layout_marginBottom="4dp"
         android:layout_marginHorizontal="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productImage"
         android:fontFamily="@font/poppins_bold"/>
 
     <!-- Product Price -->
@@ -84,34 +77,32 @@
         android:id="@+id/productPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/productName"
         android:text="$100"
         android:textSize="20sp"
         android:textColor="@color/black"
         android:layout_marginHorizontal="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productName"
         android:fontFamily="@font/poppins_semibold"/>
 
     <!-- Product Description -->
     <TextView
         android:id="@+id/productDescription"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/productPrice"
         android:layout_marginTop="8dp"
         android:text="Kunai sakti mata tajam biru pencabut nyawa"
         android:textSize="14sp"
         android:textColor="@color/text_gray_detail"
         android:layout_marginHorizontal="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productPrice"
         android:fontFamily="@font/poppins_semibold"/>
 
     <!-- Email Headline -->
     <TextView
         android:id="@+id/EmilHeadline"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/productDescription"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="10dp"
         android:text="Email"
@@ -119,16 +110,14 @@
         android:textColor="@android:color/black"
         android:textStyle="bold"
         android:layout_marginHorizontal="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productDescription"
         android:fontFamily="@font/poppins_semibold"/>
 
     <!-- Email Input Field -->
     <EditText
         android:id="@+id/emailInput"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="38dp"
+        android:layout_below="@id/EmilHeadline"
         android:paddingLeft="12dp"
         android:paddingTop="4dp"
         android:hint="Your Email"
@@ -136,42 +125,35 @@
         android:layout_marginHorizontal="24dp"
         android:layout_marginBottom="4dp"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:background="@drawable/edit_text_border"
-        android:fontFamily="@font/poppins"
-        app:layout_constraintTop_toBottomOf="@+id/EmilHeadline" />
+        android:fontFamily="@font/poppins" />
 
     <!-- Payment Method Spinner -->
     <Spinner
         android:id="@+id/paymentMethodSpinner"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="38dp"
+        android:layout_below="@id/emailInput"
         android:layout_marginTop="10dp"
         android:entries="@array/payment_methods"
         android:layout_marginHorizontal="24dp"
         android:layout_marginBottom="24dp"
         android:padding="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/edit_text_border"
-        app:layout_constraintTop_toBottomOf="@+id/emailInput" />
+        android:background="@drawable/edit_text_border" />
 
     <!-- Submit Button -->
     <Button
         android:id="@+id/submitButton"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="38dp"
+        android:layout_below="@id/paymentMethodSpinner"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/primary"
         android:text="Submit"
         android:textAllCaps="false"
-        android:textColor="@android:color/white"
+        android:textColor="@drawable/button_text_color"
         android:layout_marginHorizontal="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/paymentMethodSpinner"
         android:background="@drawable/button_background"
         android:fontFamily="@font/poppins_bold"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
