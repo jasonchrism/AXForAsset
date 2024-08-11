@@ -16,7 +16,7 @@
             android:id="@+id/text_conditions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Our mobile app allows you to browse, purchase, and download incredible 3D game assets to fuel your game development. By using the app, you agree to these conditions:
+            android:text="  Our mobile app allows you to browse, purchase, and download incredible 3D game assets to fuel your game development. By using the app, you agree to these conditions:
 Downloaded assets come with a license for use in your game projects only. Reselling or redistributing them is strictly prohibited. Each asset also has specific usage rights (commercial/non-commercial) outlined, so please ensure you follow those terms.
 We collect some user data to process transactions, personalize your experience, and improve the app. For a detailed breakdown of data collection and usage, please refer to our Privacy Policy.
 We cannot be held liable for any damages arising from your use of the app or the 3D assets within your game projects."
