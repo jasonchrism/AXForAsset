@@ -1,5 +1,6 @@
 package com.example.axforasset;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -19,6 +20,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     private List<Item> itemList;
     private Context context;
+    String username;
 
     public ItemAdapter(List<Item> itemList, Context context) {
         this.itemList = itemList;
@@ -32,6 +34,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 //            View view = LayoutInflater.from(context).inflate(R.layout.card_items, parent, false);
 
             View view = LayoutInflater.from(context).inflate(R.layout.item_card, parent, false);
+
+            username = ((Activity) context).getIntent().getStringExtra("username");
 
             return new ItemViewHolder(view);
         }
@@ -52,6 +56,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
                 iDetail.putExtra("item_price", item.getPrice());
                 iDetail.putExtra("item_desc", item.getDescription());
                 iDetail.putExtra("item_image", item.getImageResourceId());
+                iDetail.putExtra("username", username);
                 v.getContext().startActivity(iDetail);
             });
 
